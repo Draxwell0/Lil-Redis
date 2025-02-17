@@ -9,7 +9,6 @@ int main(int argc, char *argv[]) {
   struct sockaddr_in server;
   int port = 6379;
 
-  // Inicialização do Winsock
   printf("\nInitializing Winsock... \n");
   if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0) {
     printf("Failed. Error code: %d", WSAGetLastError());
@@ -17,7 +16,6 @@ int main(int argc, char *argv[]) {
   }
   printf("Initialized\n");
 
- // Criação do socket
   if ((s = socket(AF_INET, SOCK_STREAM, 0)) == INVALID_SOCKET) {
     printf("Could not create socket: %d", WSAGetLastError());
   }
